@@ -1,0 +1,46 @@
+{
+  "name": "Domain",
+  "plural": "Domains",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "required": true
+    },
+    "createdDate": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "key": {
+      "type": "string",
+      "required": true
+    },
+    "cx": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "domainperUsers": {
+      "type": "hasMany",
+      "model": "DomainperUser",
+      "foreignKey": "domainId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Notificacion",
+  "plural": "Notifications",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "userxdomainId": {
+      "type": "number",
+      "required": true
+    },
+    "searchtagdomainId": {
+      "type": "number",
+      "required": true
+    },
+    "urlresult": {
+      "type": "string",
+      "required": true
+    },
+    "creationurlDate": {
+      "type": "string"
+    },
+    "notify": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

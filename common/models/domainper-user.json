@@ -1,0 +1,42 @@
+{
+  "name": "DomainperUser",
+  "plural": "DomainsperUsers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "periodicity": {
+      "type": "string",
+      "required": true
+    },
+    "notificationType": {
+      "type": "number",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "required": true
+    },
+    "sendSeedEmail": {
+      "type": "boolean",
+      "required": true
+    },
+    "createDate": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "tagperDomainxUsers": {
+      "type": "hasMany",
+      "model": "TagperDomainxUser",
+      "foreignKey": "domainpertagkey"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

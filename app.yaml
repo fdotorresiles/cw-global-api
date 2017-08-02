@@ -1,0 +1,15 @@
+runtime: nodejs
+env: flex
+service: cw-global-api
+
+# [START env]
+env_variables:
+  NODE_ENV: production
+  SQL_USER: admin
+  SQL_CLIENT: mysql # either 'pg' or 'mysql' (all lowercase)
+  SQL_DATABASE: cwdomain
+  SQL_PASSWORD: admin
+  INSTANCE_CONNECTION_NAME: crawling-domain:us-central1:databasecw
+
+beta_settings:
+  cloud_sql_instances: crawling-domain:us-central1:databasecw

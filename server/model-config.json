@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": true
+  },
+  "StateCatalog": {
+    "dataSource": "db",
+    "public": true
+  },
+  "UserCustom": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Domain": {
+    "dataSource": "db",
+    "public": true
+  },
+  "DomainperUser": {
+    "dataSource": "db",
+    "public": true
+  },
+  "TagperDomainxUser": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Notificacion": {
+    "dataSource": "db",
+    "public": true
+  }
+}
