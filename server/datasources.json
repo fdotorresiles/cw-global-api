@@ -1,11 +1,30 @@
 {
   "db": {
     "host": "127.0.0.1",
-    "port": 3306,
-    "database": "cwdomaintest",
-    "password": "pass12345##",
+    "port": 3310,
+    "database": "cwdomainbeta",
+    "password": "admin",
     "name": "db",
-    "user": "root",
+    "user": "admin",
     "connector": "mysql"
+  },
+  "infoEmail": {
+    "name": "infoEmail",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp-mail.outlook.com",
+        "secure": false,
+        "port": 587,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "",
+          "pass": ""
+        }
+      }
+    ]
   }
 }

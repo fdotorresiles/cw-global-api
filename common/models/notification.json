@@ -1,5 +1,5 @@
 {
-  "name": "Notificacion",
+  "name": "Notification",
   "plural": "Notifications",
   "base": "PersistedModel",
   "idInjection": true,
@@ -12,10 +12,6 @@
       "required": true
     },
     "userxdomainId": {
-      "type": "number",
-      "required": true
-    },
-    "searchtagdomainId": {
       "type": "number",
       "required": true
     },

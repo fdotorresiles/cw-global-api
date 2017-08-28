@@ -34,7 +34,7 @@
     "tagperDomainxUsers": {
       "type": "hasMany",
       "model": "TagperDomainxUser",
-      "foreignKey": "domainpertagkey"
+      "foreignKey": "domainpertagId"
     }
   },
   "acls": [],

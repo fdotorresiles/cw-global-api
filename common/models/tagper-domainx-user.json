@@ -22,7 +22,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "notification": {
+      "type": "hasMany",
+      "model": "Notification",
+      "foreignKey": "notificationId"
+    },
+    "domainperUser": {
+      "type": "belongsTo",
+      "model": "DomainperUser",
+      "foreignKey": "domainpertagId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

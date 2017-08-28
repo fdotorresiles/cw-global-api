@@ -3,7 +3,7 @@
 module.exports = function(server) {
     
     var ACL = server.models.ACL;
-    var Administrator = server.models.UserCustom;
+    var usermodel = server.models.UserCustom;
     var Role = server.models.Role;
     var RoleMapping = server.models.RoleMapping;
     
@@ -60,7 +60,7 @@ module.exports = function(server) {
     server.models.UserCustom.findOne({where: {email: inusers.email}}, function(err, user) {
         if (err) { console.log(err); }
         if (!user) {
-            Administrator.create(inusers, function(err, users) {
+            usermodel.create(inusers, function(err, users) {
                 if (err) {return console.log(err);}
                 //create the admin role
                 Role.create({
@@ -70,7 +70,7 @@ module.exports = function(server) {
                 }, function(err, role) {
                     if (err) {console.log(err);}
                     role.principals.create({
-                    principalType: RoleMapping.USER,
+                    principalType: RoleMapping.Administrator,
                     principalId: users.id
                     }, function(err, principal) {
                     console.log(err, principal);
@@ -79,9 +79,9 @@ module.exports = function(server) {
             });
 
             Role.create({name: 'customer-user', description: 'User role'});
-            RoleMapping.belongsTo(Administrator);
-            Administrator.hasMany(RoleMapping, {foreignKey: 'principalId'});
-            Role.hasMany(Administrator, {through: RoleMapping, foreignKey: 'roleId'});
+            RoleMapping.belongsTo(usermodel);
+            usermodel.hasMany(RoleMapping, {foreignKey: 'principalId'});
+            Role.hasMany(usermodel, {through: RoleMapping, foreignKey: 'roleId'});
         }
     });
     

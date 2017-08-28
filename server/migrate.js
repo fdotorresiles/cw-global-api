@@ -10,7 +10,7 @@ var lbTables = [
 				'ACL',
 				'RoleMapping',
 				'Role',
-				'Notificacion'];
+				'Notification'];
 ds.automigrate(lbTables, function(er) {
   if (er) throw er;
   console.log('Loopback tables [' + lbTables + '] created in ', ds.adapter.name);

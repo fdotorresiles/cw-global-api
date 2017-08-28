@@ -32,6 +32,9 @@
     "dataSource": "db",
     "public": true
   },
+  "Email": {
+    "dataSource": "infoEmail"
+  },
   "StateCatalog": {
     "dataSource": "db",
     "public": true
@@ -52,7 +55,7 @@
     "dataSource": "db",
     "public": true
   },
-  "Notificacion": {
+  "Notification": {
     "dataSource": "db",
     "public": true
   }
